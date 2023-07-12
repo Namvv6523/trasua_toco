@@ -13,30 +13,95 @@
 
 <body>
  <div class="container-fuild">
- <div class="row">
+ <div class="row flex-nowrap">
 
- <?php /* admin-asidebar-left */ ?>
- <div class="col-2 bg-secondary ">
- <div class="bg-secondary border-bottom">
- <p class="text-center text-white mt-3 fs-4 fw-bold "> <img
- src="<?php echo \htmlentities(BASE_URL??'', ENT_QUOTES, 'UTF-8', false); ?>img/logo/logo_png.jpg" width="40px" class="rounded-circle"
- alt=""> Trà Sữa</p>
+ <?php /* start admin-asidebar-left */ ?>
+ <div class="col-2 bg-dark sidebar fixed-left " style="max-height:695px">
+
+ <div class="mt-4 position-sticky">
+ <a href=""
+ class="text-white text-decoration-none d-none d-sm-inline d-flex align-items-center ms-4"
+ role="button">
+ <img src="<?php echo \htmlentities(BASE_URL??'', ENT_QUOTES, 'UTF-8', false); ?>img/logo/logo_png.jpg" width="40" height="40" class="rounded-circle me-2" alt="">
+ <span class="fs-5 font-monospace">TocoToco</span>
+ </a>
+ <hr class="text-white" />
+ <ul class="nav nav-pills flex-column mt-2 mt-sm-0" id="menu">
+ <li class="nav-item">
+ <a href="#" class="nav-link text-white" aria-current="page">
+ <i class="fa fa-gauge me-2"></i>
+ <span class="d-none d-sm-inline">Dashbroad</span>
+ </a>
+ </li>
+
+ <?php /* ---------- */ ?>
+ <li class="nav-item ">
+ <a href="#category" class="nav-link text-white" data-bs-toggle="collapse" role="button"
+ aria-expanded="false" aria-controls="category">
+ <i class="fa fa-table me-2"></i>
+ <span class="d-none d-sm-inline">Category</span>
+ <i class="fa fa-caret-down"></i>
+ </a>
+
+ <ul class="nav collapse ms-1  " id="category">
+ <li class="nav-item ">
+ <a href="<?php echo \htmlentities(BASE_URL??'', ENT_QUOTES, 'UTF-8', false); ?>category/show" class="nav-link text-white"
+ aria-current="page">Category manager </a>
+ </li>
+ <li class="nav-item">
+ <a href="<?php echo \htmlentities(BASE_URL??'', ENT_QUOTES, 'UTF-8', false); ?>category/store" class="nav-link text-white">add
+ category</a>
+ </li>
+ </ul>
+ </li>
+
+ <?php /* ------------------ */ ?>
+ <li class="nav-item ">
+ <a href="#products" class="nav-link text-white" data-bs-target=".multi-collapse"
+ data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="products">
+ <i class="fa fa-table me-2"></i>
+ <span class="d-none d-sm-inline">Products</span>
+ <i class="fa fa-caret-down"></i>
+ </a>
+
+ <ul class="nav collapse ms-1 multi-collapse" id="products">
+ <li class="nav-item ">
+ <a href="#" class="nav-link text-white" aria-current="page">Item1</a>
+ </li>
+ <li class="nav-item">
+ <a href="#" class="nav-link text-white">Item2</a>
+ </li>
+ </ul>
+ </li>
+ <?php /* -------------------- */ ?>
+
+ <li class="nav-item">
+ <a href="#" class="nav-link text-white" aria-current="page">
+ <i class="fa fa-users"></i>
+ <span class="ms-2 d-none d-sm-inline">Customers</span>
+ </a>
+ </li>
+
+ </ul>
  </div>
 
- <?php /* danh mục */ ?>
- <div class="mt-4 list-group lh-lg ms-4  ">
- <a class="text-white text-decoration-none p-2" href=""><i class="fa-solid fa-gauge me-2 fs-5"></i>Dashboard</a>
- <a class="text-white text-decoration-none p-2" href=""><i class="fa-solid fa-cart-shopping me-2 fs-5"></i>Đơn hàng</a>
- <a class="text-white text-decoration-none p-2" href="<?php echo \htmlentities(BASE_URL??'', ENT_QUOTES, 'UTF-8', false); ?>category/show"><i class="fa-solid fa-list me-2 fs-5"></i>Danh mục</a>
- <a class="text-white text-decoration-none p-2" href=""><i class="fa-solid fa-users me-2 fs-5"></i>Tài khoản</a>
- <a class="text-white text-decoration-none p-2" href=""><i class="fas fa-address-book me-2 fs-5"></i>Sản phẩm</a>
- <a class="text-white text-decoration-none p-2" href=""><i class="fa-regular fa-message me-2 fs-5"></i>Bình luận</a>
- <a class="text-white text-decoration-none p-2" href=""><i class="fa-solid fa-chart-column me-2 fs-5"></i>Thống kê</a>
- <a class="text-white text-decoration-none p-2" href=""><i class="fa-regular fa-address-book me-2 fs-5"></i>Liên hệ</a>
+ <?php /* tài khoản */ ?>
+ <?php /* <div class="dropdown open py-3">
+ <a class="btn btn-secondary border-none outline-none dropdown-toggle" type="button" id="triggerId"
+ data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ <i class="fa fa-user me-2"></i><span>Yousaf</span>
+ </a>
+ <div class="dropdown-menu" aria-labelledby="triggerId">
+ <a class="dropdown-item" href="#">Profile</a>
+ <a class="dropdown-item" href="#">Setting</a>
  </div>
+ </div> */ ?>
 
 
+
  </div>
+
+ <?php /* end admin-asidebar-left */ ?>
 
  <?php /* admin-asidebar-right */ ?>
  <div class="col-10">
@@ -52,8 +117,8 @@
  <?php /* name cate */ ?>
  <p class="text-uppercase fs-3 fw-bold py-3">Danh mục</p>
 
- <div class="border">
- <section class="content">
+ <div class="card  m-2" style="height: 480px; overflow-y: auto;">
+ <section class="content p-2">
  <?php echo $this->yieldContent('content'); ?>
  </section>
  </div>

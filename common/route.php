@@ -13,8 +13,13 @@ $router->filter('auth', function(){
     }
 });
 
-$router->get('category/show', [App\Controllers\CategoryController::class, 'showCate']);
-$router->get('category/store', [App\Controllers\CategoryController::class, 'store']);
+/* ----------------Category---------------------- */
+$router->get('category/show', [App\Controllers\CategoryController::class, 'showCate']); // liệt kê danh mục
+$router->get('category/store', [App\Controllers\CategoryController::class, 'store']); // tạo form
+$router->post('category/create', [App\Controllers\CategoryController::class, 'create']); // lưu dữ liệu thêm
+$router->get('category/detail/{id}', [App\Controllers\CategoryController::class, 'detailCate']); // tạo form
+$router->post('category/update/{id}', [App\Controllers\CategoryController::class, 'updateCate']); // lưu dữ liệu sửa
+$router->get('category/delete/{id}', [App\Controllers\CategoryController::class, 'delete']); // xóa
 
 
 
