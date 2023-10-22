@@ -32,6 +32,7 @@ class BaseModel
 
         return $stmt->fetch();
     }
+    
     public function setQuery($sql) {
         $this->sql = $sql;
     }

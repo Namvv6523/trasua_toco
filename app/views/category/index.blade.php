@@ -2,8 +2,8 @@
 @section('content')
     <div class="p-3 " >
 
-
-        <table class="table">
+<a href="{{BASE_URL}}category/store" class="btn btn-success"><i class="fa-solid fa-plus"></i></a>
+        <table class="table" id="example">
             <thead>
                 <th>#</th>
                 <th>ID</th>
@@ -29,7 +29,7 @@
 
         </table>
 
-        <div class="d-flex align-items-end justify-content-end">
+        {{-- <div class="d-flex align-items-end justify-content-end">
             <nav aria-label="Page navigation example ">
                 <ul class="pagination">
                     <li class="page-item">
@@ -47,7 +47,7 @@
                     </li>
                 </ul>
             </nav>
-        </div>
+        </div> --}}
 
     </div>
 @endsection

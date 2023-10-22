@@ -1,68 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./public/assets/css/bootstrap.css" />
-  
-  </head>
-  <body>
-    
-    <form id="myForm" onsubmit="validateForm(event)">
-      <div class="form-group">
-        <label for="name">Tên:</label>
-        <input type="text" class="form-control" id="name" required>
-        <div id="nameError" class="invalid-feedback">
-          Vui lòng nhập tên của bạn.
-        </div>
+<form class="row g-3 needs-validation" novalidate>
+  <div class="col-md-4 position-relative">
+    <label for="validationTooltip01" class="form-label">First name</label>
+    <input type="text" class="form-control" id="validationTooltip01" value="Mark" required>
+    <div class="valid-tooltip">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-4 position-relative">
+    <label for="validationTooltip02" class="form-label">Last name</label>
+    <input type="text" class="form-control" id="validationTooltip02" value="Otto" required>
+    <div class="valid-tooltip">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-4 position-relative">
+    <label for="validationTooltipUsername" class="form-label">Username</label>
+    <div class="input-group has-validation">
+      <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+      <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
+      <div class="invalid-tooltip">
+        Please choose a unique and valid username.
       </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" class="form-control" id="email" required>
-        <div id="emailError" class="invalid-feedback">
-          Vui lòng nhập email hợp lệ.
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary">Gửi</button>
-    </form>
-      
-      
-      
-      
-  
-    <script>
-      function validateForm(event) {
-        event.preventDefault();
-        
-        var nameInput = document.getElementById("name");
-        var emailInput = document.getElementById("email");
-        
-        var nameError = document.getElementById("nameError");
-        var emailError = document.getElementById("emailError");
-        
-        if (nameInput.value === "") {
-          nameInput.classList.add("is-invalid");
-          nameError.style.display = "block";
-        } else {
-          nameInput.classList.remove("is-invalid");
-          nameError.style.display = "none";
-        }
-        
-        if (emailInput.value === "") {
-          emailInput.classList.add("is-invalid");
-          emailError.style.display = "block";
-        } else {
-          emailInput.classList.remove("is-invalid");
-          emailError.style.display = "none";
-        }
-        
-        if (nameInput.value !== "" && emailInput.value !== "") {
-          // Nếu các trường đều hợp lệ, bạn có thể thực hiện các thao tác tiếp theo ở đây
-          alert("Form đã được submit thành công!");
-        }
-      }
-    </script>
-    <!-- <script src="./public/assets/js/bootstrap.js"></script> -->
-  </body>
-</html>
+    </div>
+  </div>
+  <div class="col-md-6 position-relative">
+    <label for="validationTooltip03" class="form-label">City</label>
+    <input type="text" class="form-control" id="validationTooltip03" required>
+    <div class="invalid-tooltip">
+      Please provide a valid city.
+    </div>
+  </div>
+  <div class="col-md-3 position-relative">
+    <label for="validationTooltip04" class="form-label">State</label>
+    <select class="form-select" id="validationTooltip04" required>
+      <option selected disabled value="">Choose...</option>
+      <option>...</option>
+    </select>
+    <div class="invalid-tooltip">
+      Please select a valid state.
+    </div>
+  </div>
+  <div class="col-md-3 position-relative">
+    <label for="validationTooltip05" class="form-label">Zip</label>
+    <input type="text" class="form-control" id="validationTooltip05" required>
+    <div class="invalid-tooltip">
+      Please provide a valid zip.
+    </div>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Submit form</button>
+  </div>
+</form>

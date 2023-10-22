@@ -20,6 +20,7 @@ class CategoryController extends BaseController
         return $this->render('category.index', compact('category'));
     }
 
+    
     // xây dựng form thêm danh mục
     public function store()
     {
@@ -62,5 +63,11 @@ class CategoryController extends BaseController
     {
         $this->category->remove($id);
         header('location:' . BASE_URL . 'category/show');
+    }
+
+    // xây dựng hàm load danh mục 
+    public function load_cate(){
+        $loadcate = $this->category->loadCate();
+        return $this->render('product.index', compact('loadcate'));
     }
 }

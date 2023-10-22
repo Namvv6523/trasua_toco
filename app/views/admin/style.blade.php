@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="{{ BASE_URL }}public/assets/css/bootstrap.css">
-{{-- <link rel="stylesheet" href="{{ BASE_URL }}public/assets/js/bootstrap.min.js"> --}}
 <link rel="stylesheet" href="{{ BASE_URL }}public/fontawesome/css/all.min.css">
 <link rel="stylesheet" href="{{ BASE_URL }}public/assets/styleAdmin.css">
 

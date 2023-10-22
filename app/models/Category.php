@@ -12,6 +12,8 @@ class Category extends BaseModel
         $sql = "SELECT * FROM $this->table";
         $this->setQuery($sql);
         return $this->loadAllRows();
+        // var_dump($this->loadAllRows());
+        
     }
 
     // xây dựng hàm thêm danh mục
@@ -40,5 +42,12 @@ class Category extends BaseModel
         $sql = "DELETE FROM $this->table WHERE id = ?";
         $this->setQuery($sql);
         return $this->execute([$id]);
+    }
+
+    // xây dựng hàm load tên danh mục
+    public function loadCate(){
+        $sql = "SELECT * FROM $this->table ORDER BY id DESC ";
+        $this->setQuery($sql);
+        return $this->loadAllRows();
     }
 }

@@ -1,5 +1,7 @@
 @extends('admin.index')
 @section('content')
+
+
     
         <form action="{{BASE_URL}}category/create" method="post" >
             <div class="mb-3 w-50 mx-auto">

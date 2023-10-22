@@ -15,11 +15,29 @@ $router->filter('auth', function(){
 
 /* ----------------Category---------------------- */
 $router->get('category/show', [App\Controllers\CategoryController::class, 'showCate']); // liệt kê danh mục
-$router->get('category/store', [App\Controllers\CategoryController::class, 'store']); // tạo form
+$router->get('category/store', [App\Controllers\CategoryController::class, 'store']); // tạo form thêm
 $router->post('category/create', [App\Controllers\CategoryController::class, 'create']); // lưu dữ liệu thêm
 $router->get('category/detail/{id}', [App\Controllers\CategoryController::class, 'detailCate']); // tạo form
 $router->post('category/update/{id}', [App\Controllers\CategoryController::class, 'updateCate']); // lưu dữ liệu sửa
 $router->get('category/delete/{id}', [App\Controllers\CategoryController::class, 'delete']); // xóa
+
+/** -----------------Product----------------- */
+$router->get('product/show', [App\Controllers\ProductController::class, 'showPrd']); // liệt kê sản phẩm
+$router->get('product/store', [App\Controllers\ProductController::class, 'store']); // tạo form thêm
+$router->post('product/create', [App\Controllers\ProductController::class, 'create']); // save form thêm
+$router->get('product/detail/{id}', [App\Controllers\ProductController::class, 'detailPrd']); // tạo form sửa
+$router->get('product/remove/{id}', [App\Controllers\ProductController::class, 'remove']); // xóa
+
+
+
+
+
+
+
+
+
+
+
 
 
 
